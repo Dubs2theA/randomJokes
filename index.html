@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Jokes and Puns</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Jokes and Puns</h1>
+  
+  <p id="joke">Loading joke...</p>
+  
+  <button onclick="getJoke()">Get a new joke</button>
+  
+  <p id="credit">Credit: ChatGPT</p>
+  
+  <script>
+    const jokes = [
+      "Why couldn't the bicycle stand up by itself? Because it was two-tired.",
+      "I'm reading a book about anti-gravity. It's impossible to put down!",
+      "I used to play piano by ear, but now I use my hands.",
+      "I'm terrible at math, but I hear that calculus is a derivative of algebra, so I might be able to handle it.",
+      "Why was the math book sad? Because it had too many problems.",
+      "Why was the computer cold? Because it left its Windows open.",
+      "Why don't dinosaurs drive cars? Because they're extinct.",
+      "Why was the cat sitting on the computer? It wanted to keep an eye on the mouse.",
+      "Why was the computer wet? Because it left its Windows open in the rain.",
+      "Why couldn't the leopard play hide and seek? Because it was always spotted."
+    ];
+    
+    const colors = [
+      "#FF0000", // red
+      "#00FF00", // green
+      "#0000FF", // blue
+      "#FFFF00", // yellow
+      "#00FFFF", // cyan
+      "#FF00FF", // magenta
+      "#808080", // gray
+      "#FFA500"  // orange
+    ];
+    
+    function getJoke() {
+      const jokeIndex = Math.floor(Math.random() * jokes.length);
+      const colorIndex = Math.floor(Math.random() * colors.length);
+      const joke = jokes[jokeIndex];
+      const color = colors[colorIndex];
+      document.getElementById("joke").innerHTML = joke;
+      document.body.style.backgroundColor = color;
+    }
+    
+    getJoke();
+  </script>
+</body>
+</html>
